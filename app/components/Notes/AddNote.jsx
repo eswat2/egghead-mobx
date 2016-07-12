@@ -1,4 +1,5 @@
 import React from 'react';
+import actions from '../../utils/actions.jsx';
 
 class AddNote extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class AddNote extends React.Component {
   _handleSubmit() {
     let newNote = this.input.value;
     this.input.value = '';
-    this.props.addNote(newNote);
+    actions.addNote(newNote);
   }
 
   render() {
@@ -42,10 +43,5 @@ class AddNote extends React.Component {
     )
   }
 }
-
-AddNote.propTypes = {
-  username: React.PropTypes.string.isRequired,
-  addNote: React.PropTypes.func.isRequired
-};
 
 export default AddNote;

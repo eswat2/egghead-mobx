@@ -1,5 +1,6 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+
+import actions from '../utils/actions.jsx';
 
 class SearchGithub extends React.Component {
   constructor(props, context) {
@@ -7,17 +8,18 @@ class SearchGithub extends React.Component {
     this.input = null;
 
     this.getRef = (ref) => this._getRef(ref);
-    this.handleSubmit = () => this._handleSubmit();
+    this.handleSubmit = (event) => this._handleSubmit(event);
   }
 
   _getRef(ref) {
     this.input = ref;
   }
 
-  _handleSubmit() {
+  _handleSubmit(event) {
+    event.preventDefault();
     const user = this.input.value;
     this.input.value = '';
-    this.props.router.push(`/profile/${user}`);
+    actions.updateUser(user);
   }
 
   render() {
@@ -39,4 +41,4 @@ class SearchGithub extends React.Component {
   }
 }
 
-export default withRouter(SearchGithub);
+export default SearchGithub;

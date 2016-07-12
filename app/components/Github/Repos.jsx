@@ -1,7 +1,11 @@
 import React from 'react';
 
-const Repos = ({repos}) => {
+import { observer } from 'mobx-react';
+import store from '../../utils/store.jsx';
+
+const Repos = observer(() => {
   console.log('-- render:  Repos');
+  const repos = store.repos;
   return (
     <div>
       <h3>User Repos</h3>
@@ -15,11 +19,6 @@ const Repos = ({repos}) => {
       </ul>
     </div>
   )
-}
-
-Repos.propTypes = {
- username: React.PropTypes.string.isRequired,
- repos: React.PropTypes.array.isRequired
-};
+})
 
 export default Repos;
