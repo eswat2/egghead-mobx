@@ -3,11 +3,12 @@ import getGithubInfo from './helpers.jsx';
 import fauxBase from './fauxBase.jsx';
 
 class AppStore {
-  @observable failed = false;
+  @observable error = false;
   @observable username = null;
   @observable bio = {};
   @observable repos = [];
   @observable notes = [];
+  @observable tags = [];
 }
 
 const singleton = new AppStore();

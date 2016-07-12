@@ -5,7 +5,7 @@ import store from './store.jsx';
 
 const updateUser = action((username) => {
   console.log(`-- updateUser:  ${username}`);
-  store.username = username
+  store.username = username;
 });
 
 const addNote = action((newNote) => {
@@ -29,9 +29,16 @@ const fetchGithub = action((username) => {
         console.log('-- githubInfo');
         console.log(data);
 
-        store.bio    = data.bio;
-        store.repos  = data.repos;
-        store.failed = data.error;
+        store.bio   = data.bio;
+        store.repos = data.repos;
+        store.error = data.error;
+
+        if (!store.error) {
+          if (!store.tags.includes(username)) {
+            let list = [ ...store.tags, username ].sort();
+            store.tags = list;
+          }
+        }
       })
   }
 });
