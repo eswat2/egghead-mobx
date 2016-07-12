@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Github Note Taker app using Mobx",
   "scripts": {
-    "start": "babel-node devServer.js",
-    "notes": "json-server --watch db.json",
+    "start": "webpack-dev-server",
+    "notes": "json-server db.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

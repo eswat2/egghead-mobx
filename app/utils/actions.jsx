@@ -19,6 +19,20 @@ const addNote = action((newNote) => {
     });
 });
 
+const fetchNotes = action((username) => {
+  console.log(`-- fetchNotes:  ${username}`);
+  store.notes = [];
+  if (username) {
+    fauxBase.get('notes', username)
+      .then((data) => {
+        console.log('-- notes');
+        console.log(data);
+
+        store.notes = data.values;
+      })
+  }
+});
+
 const fetchGithub = action((username) => {
   console.log(`-- fetchGithub:  ${username}`);
   store.bio   = {};
@@ -43,26 +57,12 @@ const fetchGithub = action((username) => {
   }
 });
 
-const fetchNotes = action((username) => {
-  console.log(`-- fetchNotes:  ${username}`);
-  store.notes = [];
-  if (username) {
-    fauxBase.get('notes', username)
-      .then((data) => {
-        console.log('-- notes');
-        console.log(data);
-
-        store.notes = data.values;
-      })
-  }
-});
-
 const autoGithub = autorun(() => fetchGithub(store.username) );
 const autoNotes  = autorun(() => fetchNotes(store.username) );
 
 const actions = {
-  updateUser,
-  addNote
+  addNote,
+  updateUser
 };
 
 export default actions;

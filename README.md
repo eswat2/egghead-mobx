@@ -13,3 +13,12 @@ npm start
 ```
 
 View the content of `db.json` in order to see the changes you are making to notes.
+
+REFERENCE:
+
+```javascript
+babel-node devServer.js
+webpack-dev-server
+
+json-server --watch db.json
+```
