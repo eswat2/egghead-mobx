@@ -48,6 +48,8 @@ const fetchGithub = action((username) => {
         store.error = data.error;
 
         if (!store.error) {
+          store.saveUser(username);
+          
           if (!store.tags.includes(username)) {
             let list = [ ...store.tags, username ].sort();
             store.tags = list;
