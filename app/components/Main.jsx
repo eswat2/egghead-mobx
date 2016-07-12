@@ -3,6 +3,7 @@ import SearchGithub from './SearchGithub.jsx'
 import Profile from './Profile.jsx';
 import Danger from './Alerts/Danger.jsx';
 import Success from './Alerts/Success.jsx';
+import Navigator from './Navigator.jsx';
 
 import { observer } from 'mobx-react';
 import store from '../utils/store.jsx';
@@ -17,10 +18,11 @@ const Main = observer(() => {
         </div>
       </nav>
       <div className="container">
-        { store.failed == true ? <Danger salute="Error" message="user does not exist..." /> : null }
+        { store.error == true ? <Danger salute="Error" message="user does not exist..." /> : null }
       </div>
       <div className="container">
         <Success salute="Welcome" message="search for a Github user..." />
+        <Navigator />
         { Object.keys(store.bio).length > 0 ? <Profile /> : null  }
       </div>
     </div>
