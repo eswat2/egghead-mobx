@@ -9,18 +9,16 @@ class AppStore {
   @observable repos = [];
   @observable notes = [];
   @observable tags = [];
-}
 
-const USER_KEY = 'AppStore.username';
-
-const saveUser = function(username) {
-  if (username != null) {
-    localStorage.setItem(USER_KEY, username);
+  saveUser(username) {
+    if (username != null) {
+      localStorage.setItem(USER_KEY, username);
+    }
   }
 }
 
+const USER_KEY  = 'AppStore.username';
 const singleton = new AppStore();
-const autoUser  = autorun(() => saveUser(singleton.username));
 
 const initStore = () => {
   let user = localStorage.getItem(USER_KEY);
