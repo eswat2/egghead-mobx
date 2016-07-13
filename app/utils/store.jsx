@@ -9,6 +9,8 @@ class AppStore {
   @observable repos = [];
   @observable notes = [];
   @observable tags = [];
+  
+  @observable pop = false;
 
   saveUser(username) {
     if (username != null) {
@@ -20,12 +22,18 @@ class AppStore {
 const USER_KEY  = 'AppStore.username';
 const singleton = new AppStore();
 
+const truncatePath  = (str, pattern) => {
+  return (str.indexOf(pattern) != -1) ? str.slice(str.indexOf(pattern) + pattern.length) : null;
+}
+
 const initStore = () => {
   let user = localStorage.getItem(USER_KEY);
-  console.log('-- initStore');
-  if (user) {
-    singleton.username = user;
-  }
+  let parm = truncatePath(location.pathname, '/profile/');
+  let who  = ( user ? (parm && parm != user ? parm : user) : null );
+  console.log(`-- initStore:  ${who}`);
+  // console.log(location);
+  // console.log(parm);
+  singleton.username = who;
 }
 
 initStore();

@@ -9,7 +9,7 @@ import { observer } from 'mobx-react';
 import store from '../utils/store.jsx';
 
 const Main = observer(() => {
-  console.log('-- render:  Main');
+  // console.log('-- render:  Main');
   return (
     <div className="main-container">
       <nav className="navbar navbar-default" role="navigation">

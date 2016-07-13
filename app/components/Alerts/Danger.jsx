@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Danger = ({salute, message}) => {
-  console.log('-- render:  Danger');
+  // console.log('-- render:  Danger');
   return (
     <div className="alert alert-danger" role="alert"><strong>{salute}:</strong> {message}</div>
   )
