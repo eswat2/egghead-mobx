@@ -10,7 +10,8 @@
         "try it again",
         "foobar",
         "ping",
-        "pong"
+        "pong",
+        "foobar 42"
       ]
     },
     {
