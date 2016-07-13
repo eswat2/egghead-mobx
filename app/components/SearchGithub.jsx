@@ -27,14 +27,19 @@ class SearchGithub extends React.Component {
     return (
       <div className="col-sm-12">
         <form onSubmit={this.handleSubmit} >
-          <div className="form-group col-sm-7">
+          <div className="form-group col-sm-12">
             <div className="input-group">
               <div className="input-group-addon"><i className="fa fa-search"></i></div>
-              <input type="text" className="form-control" ref={this.getRef} placeholder="Username" />
+              <input type="text" className="form-control" ref={this.getRef} placeholder="Username..." />
+              <span className="input-group-btn">
+                <button
+                  className="btn btn-primary"
+                  type="submit"
+                  >
+                  Search Github <i className="fa fa-github"></i>
+                </button>
+              </span>
             </div>
-          </div>
-          <div className="form-group col-sm-5">
-            <button type="submit" className="btn btn-block btn-primary">Search Github <i className="fa fa-github"></i></button>
           </div>
         </form>
       </div>

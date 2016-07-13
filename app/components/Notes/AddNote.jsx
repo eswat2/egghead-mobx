@@ -24,19 +24,20 @@ class AddNote extends React.Component {
     // console.log('-- render:  AddNote');
     return (
       <div className="input-group">
+        <div className="input-group-addon"><i className="fa fa-chevron-right"></i></div>
         <input
           type="text"
           className="form-control"
-          placeholder=""
+          placeholder="Note..."
           ref={this.setRef}
           />
         <span className="input-group-btn">
           <button
-            className="btn btn-default"
+            className="btn btn-warning"
             type="button"
             onClick={this.handleSubmit}
             >
-            Submit
+            Add <i className="fa fa-sticky-note"></i>
           </button>
         </span>
       </div>
