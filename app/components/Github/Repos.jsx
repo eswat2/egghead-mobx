@@ -4,7 +4,7 @@ import { observer } from 'mobx-react';
 import store from '../../utils/store.jsx';
 
 const Repos = observer(() => {
-  console.log('-- render:  Repos');
+  // console.log('-- render:  Repos');
   const repos = store.repos;
   return (
     <div>

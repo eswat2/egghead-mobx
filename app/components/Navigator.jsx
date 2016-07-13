@@ -10,7 +10,7 @@ const NAV_STYLE = {
 }
 
 const Navigator = observer(() => {
-  console.log('-- render:  Navigator');
+  // console.log('-- render:  Navigator');
   return (
     <div>
       {store.tags.map((tag,index) => <span className="label label-info" style={NAV_STYLE} key={index} onClick={() => actions.updateUser(tag)}>{tag}</span>)}

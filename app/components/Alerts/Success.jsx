@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Success = ({salute, message}) => {
-  console.log('-- render:  Success');
+  // console.log('-- render:  Success');
   return (
     <div className="alert alert-success" role="alert"><strong>{salute}:</strong> {message}</div>
   )

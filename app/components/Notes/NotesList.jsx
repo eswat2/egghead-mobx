@@ -4,7 +4,7 @@ import { observer } from 'mobx-react';
 import store from '../../utils/store.jsx';
 
 const NotesList = observer(() => {
-  console.log('-- render:  NotesList');
+  // console.log('-- render:  NotesList');
   const notes = store.notes;
   return (
     <ul className='list-group'>

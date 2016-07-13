@@ -23,7 +23,7 @@ class SearchGithub extends React.Component {
   }
 
   render() {
-    console.log('-- render:  SearchGithub');
+    // console.log('-- render:  SearchGithub');
     return (
       <div className="col-sm-12">
         <form onSubmit={this.handleSubmit} >

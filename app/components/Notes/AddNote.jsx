@@ -21,7 +21,7 @@ class AddNote extends React.Component {
   }
 
   render() {
-    console.log('-- render:  AddNote');
+    // console.log('-- render:  AddNote');
     return (
       <div className="input-group">
         <input

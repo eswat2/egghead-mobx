@@ -5,7 +5,7 @@ import UserProfile from './Github/UserProfile.jsx';
 import Notes from './Notes/Notes.jsx';
 
 const Profile = () => {
-  console.log(`-- render:  Profile`);
+  // console.log(`-- render:  Profile`);
   return (
     <div className="row">
       <div className="col-md-4">
