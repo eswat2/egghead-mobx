@@ -3,9 +3,8 @@ import fauxBase from './fauxBase.jsx';
 import getGithubInfo from './helpers.jsx';
 import store from './store.jsx';
 
-const updateUser = action((username, pop) => {
+const updateUser = action((username) => {
   console.log(`-- updateUser:  ${username}`);
-  store.pop = (pop);
   store.username = username;
 });
 
@@ -20,15 +19,15 @@ const addNote = action((newNote) => {
     });
 });
 
-const pushState = action((username) => {
-  if (!store.pop) {
+const _pushState = action((username) => {
+  if (store.popState == null) {
     history.pushState({ username }, username, `/profile/${username}`);
   } else {
-    store.pop = false;
+    store.popState = null;
   }
 });
 
-const fetchNotes = action((username) => {
+const _fetchNotes = action((username) => {
   console.log(`-- fetchNotes:  ${username}`);
   store.notes = [];
   if (username) {
@@ -42,7 +41,7 @@ const fetchNotes = action((username) => {
   }
 });
 
-const fetchGithub = action((username) => {
+const _fetchGithub = action((username) => {
   console.log(`-- fetchGithub:  ${username}`);
   store.bio   = {};
   store.repos = [];
@@ -58,7 +57,7 @@ const fetchGithub = action((username) => {
 
         if (!store.error) {
           store.saveUser(username);
-          pushState(username);
+          _pushState(username);
 
           if (!store.tags.includes(username)) {
             let list = [ ...store.tags, username ].sort();
@@ -67,10 +66,20 @@ const fetchGithub = action((username) => {
         }
       })
   }
+  else {
+    store.popState = null;
+  }
 });
 
-const autoGithub = autorun(() => fetchGithub(store.username) );
-const autoNotes  = autorun(() => fetchNotes(store.username) );
+const _popHandler = action((pop) => {
+  if (pop) {
+    updateUser(pop.username)
+  }
+});
+
+const autoGithub = autorun(() => _fetchGithub(store.username) );
+const autoNotes  = autorun(() => _fetchNotes(store.username) );
+const autoPop    = autorun(() => _popHandler(store.popState) );
 
 const actions = {
   addNote,

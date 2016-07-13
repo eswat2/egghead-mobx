@@ -3,13 +3,13 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import Main from './components/Main.jsx';
-import actions from './utils/actions.jsx';
+import store from './utils/store.jsx';
 
 window.addEventListener('popstate', function(event) {
-  const user = (event.state && event.state.username ? event.state.username : null);
-  console.log(`-- popstate:  ${user}`);
+  const username = (event.state && event.state.username ? event.state.username : null);
+  console.log(`-- popstate:  ${username}`);
 
-  actions.updateUser(user, true);
+  store.popState = { username };
 });
 
 console.log('-- App');
