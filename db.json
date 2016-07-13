@@ -18,7 +18,8 @@
       "id": "npm",
       "values": [
         "awesome",
-        "cool"
+        "cool",
+        "superman"
       ]
     },
     {
@@ -32,6 +33,12 @@
       "id": "joe",
       "values": [
         "testing"
+      ]
+    },
+    {
+      "id": "who",
+      "values": [
+        "one for testing"
       ]
     }
   ]
