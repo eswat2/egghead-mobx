@@ -26,8 +26,8 @@
   "dependencies": {
     "axios": "^0.13.0",
     "babel-polyfill": "^6.9.1",
-    "mobx": "^2.3.6",
-    "mobx-react": "^3.5.0",
+    "mobx": "^2.3.7",
+    "mobx-react": "^3.5.1",
     "react": "^15.2.1",
     "react-dom": "^15.2.1"
   },
