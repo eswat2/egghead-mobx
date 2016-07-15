@@ -1,32 +1,20 @@
 import React from 'react';
-import SearchGithub from './SearchGithub.jsx'
-import Profile from './Profile.jsx';
-import Danger from './Alerts/Danger.jsx';
-import Success from './Alerts/Success.jsx';
-import Navigator from './Navigator.jsx';
 
-import { observer } from 'mobx-react';
-import store from '../utils/store.jsx';
+import ErrorContainer from './Containers/ErrorContainer.jsx';
+import NavigatorContainer from './Containers/NavigatorContainer.jsx';
+import ProfileContainer from './Containers/ProfileContainer.jsx';
+import SearchContainer from './Containers/SearchContainer.jsx';
 
-const Main = observer(() => {
+const Main = () => {
   // console.log('-- render:  Main');
   return (
     <div className="main-container">
-      <nav className="navbar navbar-default" role="navigation">
-        <div className="col-sm-7 col-sm-offset-2" style={{marginTop: 15}}>
-          <SearchGithub />
-        </div>
-      </nav>
-      <div className="container">
-        { store.error == true ? <Danger salute="Error" message="user does not exist..." /> : null }
-      </div>
-      <div className="container">
-        <Success salute="Welcome" message="search for a Github user..." />
-        <Navigator />
-        { Object.keys(store.bio).length > 0 ? <Profile /> : null  }
-      </div>
+      <SearchContainer />
+      <ErrorContainer />
+      <NavigatorContainer />
+      <ProfileContainer />
     </div>
   )
-})
+}
 
 export default Main;
