@@ -1,6 +1,8 @@
 # egghead-mobx
 my attempt to convert the Github Note Taker app to use Mobx...
 
+[![Dependency Status](https://dependencyci.com/github/eswat2/egghead-mobx/badge)](https://dependencyci.com/github/eswat2/egghead-mobx)
+
 NOTE: this code no longer uses firebase and re-base
 
 We are now using `json-server` to handle reading & writing notes:
