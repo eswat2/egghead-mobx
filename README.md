@@ -40,9 +40,8 @@ I created another repo which contains the code required to deploy this app to [*
 
 Some of it's features include:
 
-- simple embedded notes server built on [**mongoose**](http://mongoosejs.com/)
+- simple embedded notes api built on [**mongoose**](http://mongoosejs.com/)
 - notes are persisted to [**mlab**](https://mlab.com/)
-- a proxy to route all /notes* api calls to the embedded server
 - code to enforce SSL, leveraging heroku's certs
 - code to support the Single Page App model
 
