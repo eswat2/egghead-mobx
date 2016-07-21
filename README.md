@@ -22,15 +22,15 @@ I took the [**Build Your First React.js App**](https://egghead.io/courses/build-
 
 Some of the features include:
 
-- refined UI elements_
-- a store built on [**Mobx**](https://mobxjs.github.io/mobx/)_
-- uses [**axios**](https://github.com/mzabriskie/axios) for all api calls_
-- a notes REST api built on top of [**json-server**](https://github.com/typicode/json-server)_
-- a simple html5 pushstate mechanism_
-- saves last valid username to local storage_
-- initializes app from URL if it matches /profile/:username_
-- otherwise it reloads last username from local storage_
-- a simple navigator for visited usernames_
+- refined UI elements
+- a store built on [**Mobx**](https://mobxjs.github.io/mobx/)
+- uses [**axios**](https://github.com/mzabriskie/axios) for all api calls
+- a notes REST api built on top of [**json-server**](https://github.com/typicode/json-server)
+- a simple html5 pushstate mechanism
+- saves last valid username to local storage
+- initializes app from URL if it matches /profile/:username
+- otherwise it reloads last username from local storage
+- a simple navigator for visited usernames
 
 ### DEPLOYMENT
 
