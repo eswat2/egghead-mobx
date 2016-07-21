@@ -40,16 +40,13 @@ I created another repo which contains the code required to deploy this app to [*
 
 Some of it's features include:
 
-- embedded notes server built on [**json-server**](https://github.com/typicode/json-server)
-- a proxy to route all /notes* calls to the embedded server
+- simple embedded notes server built on [**mongoose**](http://mongoosejs.com/)
+- notes are persisted to [**mlab**](https://mlab.com/)
+- a proxy to route all /notes* api calls to the embedded server
 - code to enforce SSL, leveraging heroku's certs
 - code to support the Single Page App model
 
 The deployed app can be found here: [**egghead-mobx**](https://egghead-mobx.herokuapp.com)
-
-### CAVEATS
-
-_Due to the nature of the [**json-server**](https://github.com/typicode/json-server) implementation, notes are not saved between app restarts and redeploys on [**heroku**](https://www.heroku.com/home).  This is fine for a "proof-of-concept", which this is._
 
 ### REFERENCE:
 
